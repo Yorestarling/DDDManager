@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Api", "..\ApiDDDTest\ApiDDDTest\ApiDDD.Api.csproj", "{FDDA32AB-A112-48D8-AF6F-C54489ED1AF7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Contracts", "ApiDDD.Contracts\ApiDDD.Contracts.csproj", "{ED7082C8-70CF-4B57-A5DE-731A01516FA0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Infrastructure", "ApiDDD.Infrastructure\ApiDDD.Infrastructure.csproj", "{6B56CEDD-9721-442D-BD83-823D02564A54}"
@@ -13,16 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Application", "ApiDD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Domain", "ApiDDD.Domain\ApiDDD.Domain.csproj", "{26DDB01E-7653-46A0-80AE-3E656356683B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Api", "ApiDDD.Api\ApiDDDTest\ApiDDD.Api.csproj", "{A997F93E-3306-42AD-9106-E2149907B5B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FDDA32AB-A112-48D8-AF6F-C54489ED1AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDDA32AB-A112-48D8-AF6F-C54489ED1AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDDA32AB-A112-48D8-AF6F-C54489ED1AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDDA32AB-A112-48D8-AF6F-C54489ED1AF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED7082C8-70CF-4B57-A5DE-731A01516FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED7082C8-70CF-4B57-A5DE-731A01516FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED7082C8-70CF-4B57-A5DE-731A01516FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{26DDB01E-7653-46A0-80AE-3E656356683B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26DDB01E-7653-46A0-80AE-3E656356683B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26DDB01E-7653-46A0-80AE-3E656356683B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A997F93E-3306-42AD-9106-E2149907B5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A997F93E-3306-42AD-9106-E2149907B5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A997F93E-3306-42AD-9106-E2149907B5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A997F93E-3306-42AD-9106-E2149907B5B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
