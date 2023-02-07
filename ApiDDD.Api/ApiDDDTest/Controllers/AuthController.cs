@@ -4,8 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiDDD.Api.Controllers
 {
-    [ApiController]
+   
     [Route("auth")]
+    [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -17,7 +18,6 @@ namespace ApiDDD.Api.Controllers
 
 
         [HttpPost("register")]
-        
         public IActionResult Register(RegisterRequest request)
         {
             var authResult = _authService.Register(
