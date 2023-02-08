@@ -1,4 +1,6 @@
 ﻿using ApiDDD.Application.Common.Interfaces.Auth;
+using ApiDDD.Application.Common.Interfaces.Services;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -13,11 +15,19 @@ namespace ApiDDD.Infrastructure.Auth
 {
     public class JwtTokenGenerator : IJwtTokenGenerator
     {
+        private readonly IDateTimeProvider _dataTimeProvider;
+        private readonly  JwtSettings _jwtSettings;
+        public JwtTokenGenerator(IDateTimeProvider dataTimeProvider, IOptions<JwtSettings> jwtSettings)
+        {
+            _dataTimeProvider = dataTimeProvider;
+            _jwtSettings = jwtSettings.Value;
+        }
+
         public string GenerateToken(Guid userId, string firstName, string lastName)
         {
 
             var signingCredentials = new SigningCredentials(
-                new SymmetricSecurityKey (Encoding.UTF8.GetBytes("super-secret-key")),
+                new SymmetricSecurityKey (Encoding.UTF8.GetBytes(_jwtSettings.Secret)),
                 SecurityAlgorithms.HmacSha256);
             
             
@@ -31,8 +41,9 @@ namespace ApiDDD.Infrastructure.Auth
             };
 
             var securityToken = new JwtSecurityToken(
-                issuer:"ApiDDD",
-                expires: DateTime.Now.AddDays(1),
+                issuer:_jwtSettings.Issuer,
+                audience:_jwtSettings.Audience,
+                expires: _dataTimeProvider.UtcNow.AddMinutes(_jwtSettings.ExpirationTimeInMinutes),
                 claims: claims,
                 signingCredentials: signingCredentials);
         
