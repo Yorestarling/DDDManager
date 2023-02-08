@@ -27,10 +27,10 @@ namespace ApiDDD.Api.Controllers
                 request.password);
 
             var response = new AuthResponse(
-               authResult.Id,
-               authResult.firstName,
-               authResult.lastName,
-               authResult.email,
+               authResult.User.Id,
+               authResult.User.FirstName,
+               authResult.User.LastName,
+               authResult.User.Email,
                authResult.token);
 
             return Ok(response);
@@ -44,10 +44,10 @@ namespace ApiDDD.Api.Controllers
                 request.password);
 
             var response = new AuthResponse(
-               authResult.Id,
-               authResult.firstName,
-               authResult.lastName,
-               authResult.email,
+               authResult.User.Id,
+               authResult.User.FirstName,
+               authResult.User.LastName,
+               authResult.User.Email,
                authResult.token);
 
             return Ok(request);

@@ -1,5 +1,6 @@
 ﻿using ApiDDD.Application.Common.Interfaces.Auth;
 using ApiDDD.Application.Common.Interfaces.Services;
+using ApiDDD.Domain.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -23,7 +24,7 @@ namespace ApiDDD.Infrastructure.Auth
             _jwtSettings = jwtSettings.Value;
         }
 
-        public string GenerateToken(Guid userId, string firstName, string lastName)
+        public string GenerateToken(User user)
         {
 
             var signingCredentials = new SigningCredentials(
@@ -34,9 +35,9 @@ namespace ApiDDD.Infrastructure.Auth
             
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
-                new Claim(JwtRegisteredClaimNames.GivenName, firstName),
-                new Claim(JwtRegisteredClaimNames.FamilyName,lastName),
+                new Claim(JwtRegisteredClaimNames.Sub,user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+                new Claim(JwtRegisteredClaimNames.FamilyName,user.LastName),
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
             };
 
