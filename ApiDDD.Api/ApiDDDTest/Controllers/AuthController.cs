@@ -1,4 +1,5 @@
-﻿using ApiDDD.Application.Services.Auth;
+﻿using ApiDDD.Api.Filters;
+using ApiDDD.Application.Services.Auth;
 using ApiDDD.Contracts.Auth;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace ApiDDD.Api.Controllers
    
     [Route("auth")]
     [ApiController]
+   
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
